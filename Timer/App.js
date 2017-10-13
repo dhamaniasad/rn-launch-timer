@@ -9,7 +9,9 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button,
+  Alert
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -27,6 +29,19 @@ export default class App extends Component<{}> {
       }, 1000);
   }
 
+  onPressReset = () => {
+    // console.log(this);
+    Alert.alert(
+      'Timer reset',
+      'The app start timer will be reset. Are you sure?',
+      [
+        {text: "Yes", onPress: () => {this.setState({timer: 1})}},
+        {text: "Cancel", onPress: () => {}}
+      ]
+    )
+    // this.setState({timer: 1});
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -39,6 +54,11 @@ export default class App extends Component<{}> {
       <Text style={styles.instructions}>
         Also, wait, nvm.
       </Text>
+      <Button
+        onPress={this.onPressReset}
+        title="Reset Timer"
+        color="#841584"
+      />
       </View>
     );
   }
