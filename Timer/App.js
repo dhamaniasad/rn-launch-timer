@@ -33,9 +33,12 @@ export default class App extends Component<{}> {
       <Text style={styles.instructions}>
         Time since this app was launched:
       </Text>
-        <Text style={styles.instructions}>
-          {this.state.timer} seconds
-        </Text>
+      <Text style={styles.instructions}>
+        {this.state.timer} seconds
+      </Text>
+      <Text style={styles.instructions}>
+        Also, wait, nvm.
+      </Text>
       </View>
     );
   }
